@@ -44,16 +44,16 @@ public class BMIStateController {
 
     @FXML
     void onButtonSelect(ActionEvent event) {
-        Statement statment = null;
+        Statement statement;
         ResultSet resultSet = null;
         list = FXCollections.observableArrayList();
         try {
-            statment = LoginScreenController.connection.createStatement();
+            statement = LoginScreenController.connection.createStatement();
             if(selectDateField.getText().isEmpty()) {
-                resultSet = statment.executeQuery("SELECT * FROM BMI_state");
+                resultSet = statement.executeQuery("SELECT * FROM BMI_state");
             }else{
                 try {
-                    resultSet = statment.executeQuery("SELECT * FROM BMI_state WHERE DateHistory=\""+selectDateField.getText()+"\"");
+                    resultSet = statement.executeQuery("SELECT * FROM BMI_state WHERE DateHistory=\""+selectDateField.getText()+"\"");
                 }catch (SQLException e) {
                     infoLabel.setText("Invalid date");
                 }
