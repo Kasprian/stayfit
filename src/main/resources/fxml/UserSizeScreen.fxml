@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserSizeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserSizeController">
    <children>
       <Button layoutX="502.0" layoutY="342.0" mnemonicParsing="false" onAction="#onBackButton" text="Back" />
       <TextField fx:id="fieldHeight" layoutX="34.0" layoutY="36.0" prefHeight="31.0" prefWidth="66.0" />

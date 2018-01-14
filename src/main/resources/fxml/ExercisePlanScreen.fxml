@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ExercisePlanController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ExercisePlanController">
    <children>
-      <Button layoutX="502.0" layoutY="337.0" mnemonicParsing="false" onAction="#onBackButton" text="Back" />
+      <Button layoutX="375.0" layoutY="538.0" mnemonicParsing="false" onAction="#onBackButton" text="Back" />
+      <TableView fx:id="tableExercisePlan" layoutX="42.0" layoutY="65.0" prefHeight="292.0" prefWidth="413.0">
+         <columns>
+            <TableColumn fx:id="columnExercise" prefWidth="143.0" text="Exercise" />
+            <TableColumn fx:id="columnDay" prefWidth="153.0" text="Day" />
+            <TableColumn fx:id="columnTime" prefWidth="116.0" text="Time" />
+         </columns>
+      </TableView>
+      <Label layoutX="42.0" layoutY="24.0" text="Exercise plan">
+         <font>
+            <Font name="Arial Black" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="selectDayField" layoutX="75.0" layoutY="372.0" prefHeight="31.0" prefWidth="76.0" />
+      <Label layoutX="42.0" layoutY="377.0" text="Day" />
+      <Label layoutX="194.0" layoutY="377.0" text="Exercise" />
+      <TextField fx:id="selectExerciseField" layoutX="273.0" layoutY="372.0" prefHeight="31.0" prefWidth="83.0" />
+      <Button layoutX="390.0" layoutY="372.0" mnemonicParsing="false" onAction="#onSearchButton" text="Search" />
+      <Label fx:id="infoLabel" layoutX="509.0" layoutY="299.0" prefHeight="40.0" prefWidth="237.0" />
+      <TextField fx:id="addAndDeleteExercise" layoutX="605.0" layoutY="100.0" prefHeight="31.0" prefWidth="115.0" />
+      <Label layoutX="532.0" layoutY="105.0" text="Exercise" />
+      <Label layoutX="532.0" layoutY="141.0" text="Day" />
+      <TextField fx:id="addAndDeleteDay" layoutX="605.0" layoutY="136.0" prefHeight="31.0" prefWidth="115.0" />
+      <Button layoutX="563.0" layoutY="227.0" mnemonicParsing="false" onAction="#onAddButton" text="Add" />
+      <Label layoutX="532.0" layoutY="65.0" text="Add and delete meal from plan" />
+      <Label layoutX="532.0" layoutY="181.0" text="Time" />
+      <TextField fx:id="addAndDeleteTime" layoutX="606.0" layoutY="176.0" prefHeight="31.0" prefWidth="115.0" />
+      <Button layoutX="631.0" layoutY="227.0" mnemonicParsing="false" onAction="#onDeleteButton" text="Delete" />
+      <Label layoutX="41.0" layoutY="424.0" prefHeight="21.0" prefWidth="115.0" text="Execute plan" />
+      <TextField fx:id="executePlanDayField" layoutX="74.0" layoutY="456.0" prefHeight="31.0" prefWidth="76.0" />
+      <Label layoutX="41.0" layoutY="461.0" text="Day" />
+      <Button layoutX="185.0" layoutY="456.0" mnemonicParsing="false" onAction="#onExecuteButton" text="Execute" />
+      <Label layoutX="534.0" layoutY="403.0" text="Exercise" />
+      <TextField fx:id="addAdditionalExercise" layoutX="606.0" layoutY="398.0" prefHeight="31.0" prefWidth="115.0" />
+      <Label layoutX="523.0" layoutY="357.0" prefHeight="31.0" prefWidth="207.0" text="Addition exercise" />
+      <Button layoutX="603.0" layoutY="499.0" mnemonicParsing="false" onAction="#onAddAdditionalExercise" text="Add" />
+      <Label layoutX="532.0" layoutY="451.0" text="Time" />
+      <TextField fx:id="addAdditionalTime" layoutX="605.0" layoutY="446.0" prefHeight="31.0" prefWidth="115.0" />
    </children>
 </AnchorPane>
