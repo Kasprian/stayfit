@@ -72,16 +72,16 @@ public class UserSizeController {
     }
     @FXML
     void onButtonSelect(ActionEvent event) {
-        Statement statment = null;
+        Statement statement = null;
         ResultSet resultSet = null;
         list = FXCollections.observableArrayList();
         try {
-            statment = LoginScreenController.connection.createStatement();
+            statement = LoginScreenController.connection.createStatement();
             if(selectDateField.getText().isEmpty()) {
-                resultSet = statment.executeQuery("SELECT * FROM User_size");
+                resultSet = statement.executeQuery("SELECT * FROM User_size");
             }else{
                 try {
-                    resultSet = statment.executeQuery("SELECT * FROM User_size WHERE commitDate=\""+selectDateField.getText()+"\"");
+                    resultSet = statement.executeQuery("SELECT * FROM User_size WHERE commitDate='"+selectDateField.getText()+"'");
                 }catch (SQLException e) {
                     infoLabel.setText("Invalid date");
                 }
@@ -103,22 +103,20 @@ public class UserSizeController {
 
     @FXML
     void onButtonInsert(ActionEvent event) {
-        Statement statment = null;
+        Statement statement;
         list = FXCollections.observableArrayList();
         try {
-            statment = LoginScreenController.connection.createStatement();
+            statement = LoginScreenController.connection.createStatement();
             String sql="INSERT INTO User_size(commitDate ,HEIGHT ,WEIGH ,CHEST_SIZE ,WAIST_SIZE,HIP_SIZE) VALUES (CURDATE(),"+
                     fieldHeight.getText()+","+
                     fieldWeigh.getText()+","+
                     filedChest.getText()+","+
                     fieldWaist.getText()+","+
                     fieldHip.getText()+")";
-            statment.executeUpdate(sql);
+            statement.executeUpdate(sql);
             infoLabel.setText("Insert correct");
         } catch (SQLException e) {
             infoLabel.setText("Invalid date");
         }
-        if(selectDateField.getText().isEmpty())
-        System.out.println("there is null");
     }
 }
