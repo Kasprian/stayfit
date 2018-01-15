@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 import java.security.CodeSource;
 
 
-public class MenuScreenController extends Component {
+public class MenuScreenController  {
     @FXML
     void goToDietPlan(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DietPlanScreen.fxml"));
@@ -64,9 +64,6 @@ public class MenuScreenController extends Component {
     @FXML
     void onCreateBackup(ActionEvent event)  {
         try {
-
-        /*NOTE: Getting path to the Jar file being executed*/
-        /*NOTE: YourImplementingClass-> replace with the class executing the code*/
             CodeSource codeSource = MenuScreenController.class.getProtectionDomain().getCodeSource();
             File jarFile = new File(codeSource.getLocation().toURI().getPath());
             String jarDir = jarFile.getParentFile().getPath();
@@ -77,20 +74,13 @@ public class MenuScreenController extends Component {
             String dbUser = "root";
             String dbPass = "inspiron1423";
 
-        /*NOTE: Creating Path Constraints for folder saving*/
-        /*NOTE: Here the backup folder is created for saving inside it*/
-            String folderPath = jarDir + "\\backup";
-
-        /*NOTE: Creating Folder if it does not exist*/
-            File f1 = new File(folderPath);
-            f1.mkdir();
 
         /*NOTE: Creating Path Constraints for backup saving*/
         /*NOTE: Here the backup is saved in a folder called backup with the name backup.sql*/
             String savePath = "\"" + jarDir + "\\backup\\" + "backup.sql\"";
 
         /*NOTE: Used to create a cmd command*/
-            String executeCmd = "mysqldump -u" + dbUser + " -p" + dbPass + " --add-drop-database -B " + dbName + " -r C:\\Users\\Piotrek\\Desktop\\stayfit\\stayfit.sql";
+            String executeCmd = "mysqldump -u" + dbUser + " -p" + dbPass + " --routines --add-drop-database -B " + dbName + " -r C:\\Users\\Piotrek\\Desktop\\stayfit.sql";
 
         /*NOTE: Executing the command here*/
             Process runtimeProcess = Runtime.getRuntime().exec(executeCmd);
@@ -110,7 +100,11 @@ public class MenuScreenController extends Component {
 
     @FXML
     void onRestoreBackup(ActionEvent event) {
-        String[] restoreCmd = new String[]{"mysql ", "-u root -p inspiron1423 ","-e source", "C:\\Users\\Piotrek\\Desktop\\stayfit.sql"};
+        String dbName = "stayfit";
+        String dbUser = "root";
+        String dbPass = "inspiron1423";
+       // String[] restoreCmd = new String[]{"mysql ", "-uroot", "-pinspiron1423 ","firma","<", "C:/Users/Piotrek/Desktop/firma.sql"};
+        String[] restoreCmd = new String[]{"mysql ", "--user=" + dbUser, "--password=" + dbPass, "-e", "source " + "C:/Users/Piotrek/Desktop/stayfit.sql"};
         Process runtimeProcess;
         try {
 
