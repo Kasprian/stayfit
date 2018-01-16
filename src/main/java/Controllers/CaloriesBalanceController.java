@@ -42,9 +42,6 @@ public class CaloriesBalanceController {
     private TableColumn<Object, Object> columnFats;
 
     @FXML
-    private TextField searchField;
-
-    @FXML
     private RadioButton GroupRadioButton;
 
     @FXML

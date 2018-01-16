@@ -19,4 +19,44 @@ public class Food_calories {
         this.Protein_per_100gram = new SimpleIntegerProperty(protein_per_100gram);
         this.Fats_per_100gram = new SimpleIntegerProperty(fats_per_100gram);
     }
+
+    public StringProperty productProperty() {
+        return Product;
+    }
+
+    public IntegerProperty calories_per_100gramProperty() {
+        return Calories_per_100gram;
+    }
+
+    public IntegerProperty carbohydrate_per_100gramProperty() {
+        return Carbohydrate_per_100gram;
+    }
+
+    public IntegerProperty fats_per_100gramProperty() {
+        return Fats_per_100gram;
+    }
+
+    public IntegerProperty protein_per_100gramProperty() {
+        return Protein_per_100gram;
+    }
+
+    public String getProduct() {
+        return Product.get();
+    }
+
+    public int getCalories_per_100gram() {
+        return Calories_per_100gram.get();
+    }
+
+    public int getCarbohydrate_per_100gram() {
+        return Carbohydrate_per_100gram.get();
+    }
+
+    public int getProtein_per_100gram() {
+        return Protein_per_100gram.get();
+    }
+
+    public int getFats_per_100gram() {
+        return Fats_per_100gram.get();
+    }
 }

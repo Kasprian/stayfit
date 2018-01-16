@@ -88,7 +88,7 @@ public class AddExerciseController {
             statement = LoginScreenController.connection.createStatement();
             if (selectExerciseField.getText().isEmpty()) {
                 sql = "SELECT * FROM Exercise_calories";
-            } else if (selectExerciseField.getText().isEmpty()) {
+            } else if (!selectExerciseField.getText().isEmpty()) {
                 sql = "SELECT * FROM Exercise_calories WHERE Exercise='" + selectExerciseField.getText() + "'";
             }
             try {
@@ -96,8 +96,12 @@ public class AddExerciseController {
             } catch (SQLException e) {
                 infoLabel.setText("Invalid date");
             }
-            while (resultSet.next()) {
-                list.add(new Exercise_calories(resultSet.getString(1), resultSet.getInt(2)));
+            try {
+                while (resultSet.next()) {
+                    list.add(new Exercise_calories(resultSet.getString(1), resultSet.getInt(2)));
+                }
+            }catch(NullPointerException e){
+
             }
         } catch (SQLException e) {
             infoLabel.setText("Invalid date");

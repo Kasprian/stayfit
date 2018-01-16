@@ -103,7 +103,7 @@ public class AddProductController {
             statement = LoginScreenController.connection.createStatement();
             if (selectProductField.getText().isEmpty()) {
                 sql = "SELECT * FROM Food_calories_and_nutrients";
-            } else if (selectProductField.getText().isEmpty()) {
+            } else if (!selectProductField.getText().isEmpty()) {
                 sql = "SELECT * FROM Food_calories_and_nutrients WHERE Product='" + selectProductField.getText() + "'";
             }
             try {
@@ -115,8 +115,10 @@ public class AddProductController {
                 alert.setContentText("Invalid date!");
                 alert.showAndWait();
             }
+            try{
             while (resultSet.next()) {
                 list.add(new Food_calories(resultSet.getString(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5)));
+            }}catch(NullPointerException e){
             }
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
