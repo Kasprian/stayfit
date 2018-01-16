@@ -95,4 +95,12 @@ public class Calories_balance {
     public IntegerProperty fatsProperty() {
         return Fats;
     }
+
+    public String getSources() {
+        return sources.get();
+    }
+
+    public StringProperty sourcesProperty() {
+        return sources;
+    }
 }
