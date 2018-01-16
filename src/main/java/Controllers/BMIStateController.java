@@ -72,7 +72,7 @@ public class BMIStateController {
     @FXML
     void onButtonBack(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/MenuScreen.fxml"));
-        Scene scene= new Scene(root);
+        Scene scene= new Scene(root) ;
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene);
         window.show();
