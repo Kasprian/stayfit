@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProductController">
+   <children>
+      <Label layoutX="458.0" layoutY="279.0" text="Delete product" />
+      <TextField fx:id="productDeleteField" layoutX="551.0" layoutY="309.0" prefHeight="31.0" prefWidth="109.0" />
+      <Label layoutX="458.0" layoutY="314.0" text="Product" />
+      <Button layoutX="549.0" layoutY="351.0" mnemonicParsing="false" onAction="#onDeleteButton" text="Delete" />
+      <TableView fx:id="tableExercise" layoutX="31.0" layoutY="41.0" prefHeight="372.0" prefWidth="398.0">
+         <columns>
+            <TableColumn fx:id="columnProduct" prefWidth="82.0" text="Product" />
+            <TableColumn fx:id="columnCalories" prefWidth="66.0" text="Calories" />
+            <TableColumn fx:id="columnCarbohydrate" prefWidth="105.0" text="Carbohydrate" />
+            <TableColumn fx:id="columnProtein" prefWidth="68.0" text="Protein" />
+            <TableColumn fx:id="columnFats" prefWidth="63.0" text="Fats" />
+         </columns>
+      </TableView>
+      <TextField fx:id="selectProductField" layoutX="110.0" layoutY="430.0" prefHeight="31.0" prefWidth="117.0" />
+      <Button layoutX="246.0" layoutY="430.0" mnemonicParsing="false" onAction="#onButtonSelect" text="Search" />
+      <Label layoutX="47.0" layoutY="435.0" text="Product" />
+      <Button layoutX="580.0" layoutY="430.0" mnemonicParsing="false" onAction="#onButtonBack" text="Back" />
+      <TextField fx:id="productField" layoutX="547.0" layoutY="59.0" prefHeight="31.0" prefWidth="117.0" />
+      <Label layoutX="450.0" layoutY="31.0" text="Add product" />
+      <TextField fx:id="caloriesField" layoutX="547.0" layoutY="97.0" prefHeight="31.0" prefWidth="117.0" />
+      <TextField fx:id="carbohydrateField" layoutX="547.0" layoutY="134.0" prefHeight="31.0" prefWidth="117.0" />
+      <TextField fx:id="proteinField" layoutX="547.0" layoutY="173.0" prefHeight="31.0" prefWidth="117.0" />
+      <TextField fx:id="fatsField" layoutX="547.0" layoutY="212.0" prefHeight="31.0" prefWidth="117.0" />
+      <Label layoutX="450.0" layoutY="64.0" text="Product" />
+      <Label layoutX="450.0" layoutY="102.0" text="Calories" />
+      <Label layoutX="450.0" layoutY="139.0" text="Carbohydrate" />
+      <Label layoutX="450.0" layoutY="178.0" text="Protein" />
+      <Label layoutX="450.0" layoutY="217.0" text="Fats" />
+      <Button layoutX="549.0" layoutY="250.0" mnemonicParsing="false" onAction="#onAddButton" text="Add" />
+   </children>
+</AnchorPane>

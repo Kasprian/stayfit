@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ExercisePlanController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ExercisePlanController">
    <children>
       <Button layoutX="375.0" layoutY="538.0" mnemonicParsing="false" onAction="#onBackButton" text="Back" />
       <TableView fx:id="tableExercisePlan" layoutX="42.0" layoutY="65.0" prefHeight="292.0" prefWidth="413.0">

@@ -170,6 +170,7 @@ public class DietPlanController {
             statement.setString(2, executePlanMealField.getText());
             statement.execute();
             infoLabel.setText("Executed diet");
+
         } catch (SQLException e) {
             e.printStackTrace();
             infoLabel.setText("Invalid date");

@@ -7,14 +7,16 @@ import javafx.beans.property.StringProperty;
 
 public class Calories_balance {
     private final IntegerProperty ID;
+    private final StringProperty sources;
     private final StringProperty commitDate;
     private final IntegerProperty Calories;
     private final IntegerProperty Carbohydrate;
     private final IntegerProperty Protein;
     private final IntegerProperty Fats;
 
-    public Calories_balance(int ID, String commitDate, int Calories, int Carbohydrate, int Protein, int Fats) {
+    public Calories_balance(int ID,String sources, String commitDate, int Calories, int Carbohydrate, int Protein, int Fats) {
         this.ID = new SimpleIntegerProperty(ID);
+        this.sources= new SimpleStringProperty(sources);
         this.commitDate = new SimpleStringProperty(commitDate);
         this.Calories = new SimpleIntegerProperty(Calories);
         this.Carbohydrate = new SimpleIntegerProperty(Carbohydrate);

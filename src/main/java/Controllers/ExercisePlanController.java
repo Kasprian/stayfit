@@ -135,7 +135,6 @@ public class ExercisePlanController {
             try {
                 statement = LoginScreenController.connection.prepareCall("{call stayfit.execute_training(?)}");
                 statement.setString(1, executePlanDayField.getText());
-                // '"+executePlanDayField.getText()+"','"+executePlanMealField+"')
                 statement.execute();
                 infoLabel.setText("Executed training");
             } catch (SQLException e) {
